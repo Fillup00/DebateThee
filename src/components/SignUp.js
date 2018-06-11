@@ -4,8 +4,10 @@ import { Link, withRouter, } from 'react-router-dom';
 import * as routes from '../constants/routes';
 import { auth } from '../firebase';
 
+import './App.css';
+
 const SignUpPage = ({ history }) =>
-  <div>
+  <div className="SignUpPage">
     <h1>SignUp</h1>
     <SignUpForm history={history}/>
   </div>
@@ -24,8 +26,10 @@ const byPropKey = (propertyName, value) => () => ({
 class SignUpForm extends Component {
   constructor(props) {
     super(props);
+    this.state = { ...INITIAL_STATE };
 
-    this.state = { INITIAL_STATE };
+    //this.handleChange = this.handleChange.bind(this);
+    //this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   onSubmit = (event) => {
@@ -34,12 +38,14 @@ class SignUpForm extends Component {
       email,
       passwordOne,
     } = this.state;
+
     const {
       history,
     } = this.props;
+
     auth.doCreateUserNameWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
-        this.setState(() => ({ INITIAL_STATE}));
+        this.setState(() => ({ INITIAL_STATE }));
         history.push(routes.HOME);
       })
       .catch(error => {
@@ -61,20 +67,22 @@ class SignUpForm extends Component {
       passwordOne !== passwordTwo ||
       passwordOne === '' ||
       email === '' ||
-      username == '';
+      username === '';
     return (
         /*
           Whats going on down here:
           ONCHANGE = 
         */
-
+      
       <form onSubmit={this.onSubmit}>
+      
         <input
           value={username}
           onChange={event => this.setState(byPropKey('username', event.target.value))}
           type="text"
-          placeholder="Full Name"
+          placeholder="Username"
         />
+        
         <input
           value={email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}

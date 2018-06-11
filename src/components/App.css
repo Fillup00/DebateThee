@@ -1,28 +1,94 @@
-.App {
+body{
+  color: black;
+  background-color: white;
+  font: 400 14px CoreSans, Arial, sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+a {
+  color: black;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+a:hover {
+  text-decoration: underline;
+  color: #2be6ff;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  margin-right: 10px;
+  border: 1px solid #dddddd;
+}
+
+button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+  color: #808080;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2be6ff;
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+*:focus {
+  outline: none;
 }
 
-.App-intro {
-  font-size: large;
+.page{
+  margin: 20px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.interactions {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+.SignUpPage{
+  padding: 14px 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  
+  background-color: rgb(199, 199, 199);
+  border-style: solid;
+  border-width: 2px;
+  border-color: #111;
+  text-align: center;
+}
+
+input{
+  background-color: white;
+  color: #888;
 }
